@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>placeholder</title>
+
+	<!--<script src="http://files.cnblogs.com/files/rainbowcode/PlaceHolder.js"></script>-->
+	
+</head>
+<body>
+<style type="text/css">
+/*输入时的颜色*/
+#testPlaceHolder input{padding: 5px;margin: 5px;color: #000;}
+/*占位时的颜色*/
+#testPlaceHolder input.placeholder{color: #f00;}/* IE6/7/8/9 */
+#testPlaceHolder input::-webkit-input-placeholder{ color:#f00;}/* WebKit */
+#testPlaceHolder input:-moz-placeholder{color:#f00;}/* Firefox 4 - 18 */
+#testPlaceHolder input::-moz-placeholder{color:#f00;}/* Firefox 19+ */
+#testPlaceHolder input:-ms-input-placeholder{color:#f00;}/* IE10+ */
+
+#demo label{display: inline-block; width: 95px; padding-right: 5px; text-align: right;}
+#demo input{width: 200px;}
+#demo .placeholder{color: #c4c4c4;}
+</style>
+<div id="testPlaceHolder">
+	  <input type="text" placeholder='请输入您的手机号' /><input type="text" placeholder='请输入手机验证码' /><input type="text" placeholder='请输入您的用户名' /> <input type="password" placeholder='请输入您的密码' /> 
+	
+</div>
+
+<div id="demo">
+	<p><label for="u_name">用户名：</label><input type="text" id="u_name" placeholder="请输入用户名"></p>	
+	<p><label for="u_pwd">密码：</label><input type="text" id="u_pwd" placeholder="请输入密码"></p>	
+	<p><label for="u_phone">手机号：</label><input type="tel" id="u_phone" placeholder="请输入手机号码"></p>	
+	<p><label for="u_code">验证码：</label><input type="tel" id="u_code" placeholder="请输入手机验证码"></p>	
+</div>
+
+<script type="text/javascript" src="PlaceHolder.min.js"></script>
+<script type="text/javascript">
+	var testPlaceHolder = document.getElementById('testPlaceHolder'),
+		inputs = testPlaceHolder.getElementsByTagName('input');
+	PlaceHolder.create(inputs);
+
+	var demo = document.getElementById('demo'),
+		demoInputs = demo.getElementsByTagName('input');
+	PlaceHolder.create(demoInputs);
+
+</script>
+</body>
+</html>
